@@ -1,6 +1,6 @@
 .content{
     height: 100%;
-  width: 196px;
+  width: 260px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -9,3 +9,37 @@
   overflow-x: hidden;
 }
 
+ .author-name {
+  color: #f3f3f3;
+  font-family: 'Slabo 27px', serif;
+
+}
+.author-desc{
+  color: #f3f3f3;
+  font-family: 'Slabo 27px', serif;
+  text-align: center
+}
+
+hr{
+  background-color: #f6f7fa;
+}
+
+.menu-item{
+  color: #f3f3f3;
+  font-family: 'Slabo 27px', serif;
+  text-align: center;
+  border: 1px solid #212121;
+  transition: 1s;
+
+}
+
+.menu-item:hover{
+  color: #f3f3f3;
+  font-family: 'Slabo 27px', serif;
+  text-align: center;
+  border: 1px solid #f6f7fa;
+  
+}
+i{
+  color:#f6f7fa;
+}
