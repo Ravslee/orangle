@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
     this.blogSrv.getAllBlogs()
     .then((res:any)=>{
       this.blogs= res;
+      console.log(res);
+      
     })
   }
 

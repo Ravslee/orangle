@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SideLayoutComponent } from './components/side-layout/side-layout.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { ViewBlogComponent } from './pages/view-blog/view-blog.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     SideLayoutComponent,
     HeaderComponent,
+    ViewBlogComponent,
   ],
   imports: [
     BrowserModule,
