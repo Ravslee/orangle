@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   loadData(){
     this.blogSrv.getAllBlogs()
     .then((res:any)=>{
-      this.blogs= res;
+      this.blogs= res.data;
       console.log(res);
       
     })
