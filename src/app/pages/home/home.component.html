@@ -1,15 +1,22 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-4 p8 " *ngFor="let blog of blogs;let i=index">
+    <div class="col-sm-12 col-md-6 col-lg-4 p8 " *ngFor="let blog of blogs;let i=index">
 
-      <div class=" blog-card " routerLink="view">
-        <div class="blog-media" style="background:url('http://placeimg.com/640/360/any')">
-     
+      <div class="blog-card" routerLink="post/{{blog._id}}">
+        <div class="overlay"></div>
+
+        <div class="blog-media" [style.background-image]="getSafeUrl(blog.banner)">
+          <div class="blog-media-text">
+            {{blog.shortTitle}}
+          </div>
         </div>
 
         <div class="blog-content p16 text-center">
 
+          <small>{{blog.updatedAt | date}}</small>
+          <div class="divider"></div>
           <small>{{blog.title}}</small>
+          
         </div>
       </div>
     </div>

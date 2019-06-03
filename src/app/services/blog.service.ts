@@ -12,4 +12,7 @@ export class BlogService {
   public getAllBlogs(){
     return this.http.get(hostV1+"/core/api/blogs").toPromise();
   }
+  public getPostById(postId:any){
+    return this.http.get(hostV1+"/core/api/blogs/"+postId).toPromise();
+  }
 }

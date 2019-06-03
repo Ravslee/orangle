@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,8 @@ import { BlogService } from 'src/app/services/blog.service';
 })
 export class HomeComponent implements OnInit {
   blogs: any= [];
-  constructor(public blogSrv:BlogService) {
+  constructor(public blogSrv:BlogService,
+    private sanitizer:DomSanitizer) {
 
    }
 
@@ -23,6 +25,10 @@ export class HomeComponent implements OnInit {
       console.log(res);
       
     })
+  }
+
+  getSafeUrl(image:any){
+    return this.sanitizer.bypassSecurityTrustStyle(`url(${image})`);
   }
 
 }

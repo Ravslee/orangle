@@ -8,6 +8,9 @@ import { SideLayoutComponent } from './components/side-layout/side-layout.compon
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { ViewBlogComponent } from './pages/view-blog/view-blog.component';
+import { NgxMdModule } from 'ngx-md';
+import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { ViewBlogComponent } from './pages/view-blog/view-blog.component';
     SideLayoutComponent,
     HeaderComponent,
     ViewBlogComponent,
+    FooterComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMdModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
