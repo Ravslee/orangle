@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {environment} from 'src/environments/environment'
+import {environment} from '../../environments/environment'
 const hostV1 = environment.host
 @Injectable({
   providedIn: 'root'

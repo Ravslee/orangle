@@ -1,14 +1,15 @@
 <div class="pb32" *ngIf="post">
   <div>
-    <div class="header"  [style.background-image]="getSafeUrl(post.banner)">
+    <div class="header" [style.background-image]="getSafeUrl(post.banner)">
       <div class="header-text">
         {{post?.subTitle}}
-  
+
       </div>
     </div>
   </div>
-  
+
   <article class="blog-card pv16">
+
     <div class="article-title">
       <h1>{{post.title}}</h1>
     </div>
@@ -21,13 +22,23 @@
         <h6>Posted by Ravi Rajput</h6>
       </div>
     </div>
-  
-    <div class="article-content">
+
+    <div class="pb32"> 
+        <share-buttons class="float-right" [theme]="'circles-dark'"
+        [include]="['facebook','twitter','linkedin','whatsapp']"
+        [exclude]="['']"
+        [show]="14"
+        [size]="-1"
+       ></share-buttons>
+
+
+    </div>
+    <div class="article-content ">
       <ngx-md [data]="postBody" style="font-weight:300">
-  
+
       </ngx-md>
     </div>
-    
+
   </article>
- 
+
 </div>

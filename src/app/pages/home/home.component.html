@@ -5,7 +5,13 @@
       <div class="blog-card" routerLink="post/{{blog._id}}">
         <div class="overlay"></div>
 
-        <div class="blog-media" [style.background-image]="getSafeUrl(blog.banner)">
+        <div class="blog-media" *ngIf="blog.banner" [style.background-image]="getSafeUrl(blog.banner)">
+          <div class="blog-media-text">
+            {{blog.shortTitle}}
+          </div>
+        </div>
+
+        <div class="blog-media" style="background: #212529" *ngIf="!blog.banner">
           <div class="blog-media-text">
             {{blog.shortTitle}}
           </div>
@@ -16,7 +22,7 @@
           <small>{{blog.updatedAt | date}}</small>
           <div class="divider"></div>
           <small>{{blog.title}}</small>
-          
+
         </div>
       </div>
     </div>

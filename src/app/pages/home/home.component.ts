@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
+import { BlogService } from '../../services/blog.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   getSafeUrl(image:any){
+    // return ""
     return this.sanitizer.bypassSecurityTrustStyle(`url(${image})`);
   }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
+import { BlogService } from '../../services/blog.service';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-view-blog',
@@ -15,6 +16,7 @@ export class ViewBlogComponent implements OnInit {
   public postBody: any = "";
 
   constructor(private blogSrv: BlogService,
+    private seoSrv:SeoService,
     private route: ActivatedRoute,
     private sanitizer:DomSanitizer) {
     this.route.paramMap.subscribe((params: any) => {
@@ -33,6 +35,13 @@ export class ViewBlogComponent implements OnInit {
       .then((res: any) => {
         this.post = res.data;
         this.postBody = this.post.body;
+
+        this.seoSrv.generateTags({
+          title: this.post.title,
+          description: this.post.body,
+          image: this.post.banner,
+          slug: 'post/' + this.post._id
+        })
       })
       .catch(err => {
         console.log(err);

@@ -11,6 +11,7 @@ import { ViewBlogComponent } from './pages/view-blog/view-blog.component';
 import { NgxMdModule } from 'ngx-md';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ShareButtonsModule } from '@ngx-share/buttons';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,12 @@ import { AboutComponent } from './pages/about/about.component';
     AboutComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     NgxMdModule.forRoot(),
+    ShareButtonsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
